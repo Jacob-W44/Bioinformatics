@@ -1,25 +1,27 @@
 {
-    "id": "4C0C7C4D",
+    "id": "7044CBB7",
     "path": "C:/Users/jacob/Downloads/BioinformaticsClass/Bioinformatics/script.R",
     "project_path": "script.R",
     "type": "r_source",
-    "hash": "0",
+    "hash": "630119771",
     "contents": "",
     "dirty": false,
-    "created": 1770656568169.0,
+    "created": 1770666658769.0,
     "source_on_save": false,
     "relative_order": 1,
     "properties": {
         "tempName": "Untitled1",
         "source_window_id": "",
-        "Source": "Source"
+        "Source": "Source",
+        "cursorPosition": "2,7",
+        "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1770656595,
+    "lastKnownWriteTime": 1770667062,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1770656595561,
+    "last_content_update": 1770667062495,
     "read_only": false,
     "read_only_alternatives": []
 }

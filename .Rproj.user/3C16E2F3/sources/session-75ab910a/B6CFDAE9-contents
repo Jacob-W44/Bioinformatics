@@ -1,3 +1,5 @@
+#Lab 3
+
 setwd("C:/Users/jacob/Downloads/BioinformaticsClass")
 
 library(pwalign)

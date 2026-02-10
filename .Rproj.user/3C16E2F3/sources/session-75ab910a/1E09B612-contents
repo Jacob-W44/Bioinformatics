@@ -1,0 +1,42 @@
+setwd("C:/Users/jacob/Downloads/BioinformaticsClass")
+
+library(Biostrings)
+library(pwalign)
+library(seqinr)
+
+# I changed the FASTA file names on mine so just replace what I put with your files
+E.coli <- read.fasta("E.coli.fasta", as.string = TRUE)
+T.volcanium <- read.fasta("T.volcanium.fasta", as.string = TRUE)
+
+nchar(E.coli)
+nchar(T.volcanium)
+
+table(strsplit(E.coli[[1]], "")[[1]])
+table(strsplit(T.volcanium[[1]], "")[[1]])
+
+# For GC Percentage
+# 1. Create Function
+
+calculate_gc <- function(sequence){
+  sequence <- toupper(sequence)
+  gc_count <- sum(charToRaw(sequence) %in% charToRaw("GC"))
+  gc_percent <- (gc_count / nchar(sequence)) * 100
+  return(gc_percent)
+}
+
+
+# 2. Rename
+E.coli_GC <- E.coli
+
+gc_content <- calculate_gc(E.coli_GC)
+
+# 3. Run Percent Function
+cat("GC Content (%):", gc_content, "\n")
+
+
+# 4. Repeat steps 2-3 for T.volcanium
+T.volcanium_GC <- T.volcanium
+
+gc_content2 <- calculate_gc(T.volcanium_GC)
+
+cat("GC Content (%):", gc_content2, "\n")

@@ -1,0 +1,13 @@
+setwd("C:/Users/jacob/Downloads/BioinformaticsClass")
+
+library(pwalign)
+library(Biostrings)
+
+Raph.sativus <- readDNAStringSet("Raphanus.sativus.fasta")
+Sequence.2 <- readDNAStringSet("Lab_3_Sequences.fasta")
+
+pwalign <- pairwiseAlignment(Raph.sativus [[1]], Sequence.2 [[2]], type = "local")
+
+pwalign
+
+pid(pwalign)

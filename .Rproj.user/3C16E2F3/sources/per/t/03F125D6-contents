@@ -1,13 +1,18 @@
-#This is the new R script for Lab 5
-getwd
-#This is the new R script for Lab 5
-getwd()
+#Lab 4
+
 setwd("C:/Users/jacob/Downloads/BioinformaticsClass")
+
 library(Biostrings)
 library(msa)
+
 Deino.87 <- readDNAStringSet("16sRNA_Deino_87seq.fasta")
+
 nchar(Deino.87) [[1]]
+
 msaClustalW(Deino.87)
+
 myAlignment <- msa(Deino.87)
+
 myConsensus <- msaConsensusSequence(myAlignment)
+
 nchar(myConsensus)

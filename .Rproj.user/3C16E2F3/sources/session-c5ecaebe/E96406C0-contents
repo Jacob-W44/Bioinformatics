@@ -1,0 +1,15 @@
+setwd("C:/Users/jacob/Downloads/BioinformaticsClass")
+
+library(Biostrings)
+library(pwalign)
+library(seqinr)
+library(msa)
+
+print(msa(Midterm.seq))
+
+
+Midterm.Protein <- readAAStringSet("Midterm.Protein.fasta")
+
+Midterm.PWaln <- pairwiseAlignment(Midterm.Translation, Midterm.Protein.2, type = "local")
+
+Midterm.Protein.2 <- readAAStringSet("Midterm.Protein.2.fasta")

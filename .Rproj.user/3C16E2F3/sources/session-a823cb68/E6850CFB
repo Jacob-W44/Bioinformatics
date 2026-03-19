@@ -1,0 +1,28 @@
+{
+    "id": "E6850CFB",
+    "path": null,
+    "project_path": null,
+    "type": "object_explorer",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1773879190291.0,
+    "source_on_save": false,
+    "relative_order": 10,
+    "properties": {
+        "id": "ee182259c32a49c9973bc2dfabe08d77",
+        "name": "Alphafold.2",
+        "title": "Alphafold.2",
+        "language": "R",
+        "source_window_id": "",
+        "Source": "Source"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 2363446793400,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1773879190291,
+    "read_only": false,
+    "read_only_alternatives": []
+}

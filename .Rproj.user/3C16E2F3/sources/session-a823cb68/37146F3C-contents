@@ -14,6 +14,9 @@ class(P.fluor.prot)
 
 Biostrings::writeXStringSet(P.fluor.prot, filepath = "P.fluor.prot", format = "fasta")
 
+# I couldn't get the accession numbers into a combined vector to let me find the Info
+# So I just did each step with as two separate vectors for each number
+
 Prot.GOT.info <- GetProteinGOInfo("P0A799")
 Prot.GOT.info2 <- GetProteinGOInfo("P08839")
 
@@ -36,3 +39,5 @@ pdb.2 <- fetch_pdb("2WHG") #P08839
 Alphafold.1 <- fetch_alphafold_prediction("P0A799")
 Alphafold.2 <- fetch_alphafold_prediction("P08839")
 
+# The images on GitHub are going to be further down the folder and saved as
+# "Accession number" Protein 3D Lab 10

@@ -40,4 +40,4 @@ Alphafold.1 <- fetch_alphafold_prediction("P0A799")
 Alphafold.2 <- fetch_alphafold_prediction("P08839")
 
 # The images on GitHub are going to be further down the folder and saved as
-# "Accession number" Protein 3D Lab 10
+# "Accession number" Protein 3D Lab 10!

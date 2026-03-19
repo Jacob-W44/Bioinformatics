@@ -1,1 +1,38 @@
-shjbfk
+setwd("C:/Users/jacob/Downloads/BioinformaticsClass/Bioinformatics")
+
+
+
+library(GenomicAlignments)
+library(UniprotR)
+library(protti)
+library(r3dmol)
+
+P.fluor.16 <- readDNAStringSet("P.fluorescens.16S.fasta")
+
+P.fluor.prot <- Biostrings::translate(P.fluor.16, if.fuzzy.codon = "solve")
+class(P.fluor.prot)
+
+Biostrings::writeXStringSet(P.fluor.prot, filepath = "P.fluor.prot", format = "fasta")
+
+Prot.GOT.info <- GetProteinGOInfo("P0A799")
+Prot.GOT.info2 <- GetProteinGOInfo("P08839")
+
+PlotGoInfo(Prot.GOT.info)
+PlotGoInfo(Prot.GOT.info2)
+
+Path.1 <- GetPathology_Biotech("P0A799")
+Path.2 <- GetPathology_Biotech("P08839")
+
+Get.diseases(Path.1)
+Get.diseases(Path.2)
+
+Uniprot.1 <- fetch_uniprot("P0A799")
+Uniprot.2 <- fetch_uniprot("P08839")
+
+pdb.1 <- fetch_pdb("1ZMR") #P0A799
+pdb.2 <- fetch_pdb("2WHG") #P08839
+
+
+Alphafold.1 <- fetch_alphafold_prediction("P0A799")
+Alphafold.2 <- fetch_alphafold_prediction("P08839")
+

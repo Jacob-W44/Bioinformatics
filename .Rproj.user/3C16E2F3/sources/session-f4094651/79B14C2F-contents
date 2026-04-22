@@ -1,0 +1,5 @@
+Sequence <- readAAStringSet("sequence.fasta")
+pairwiseAlignment(AminoAcid [[2]], Sequence, type = "local")
+
+prot.Go.Info <- GetProteinGOInfo("P0A8T9")
+plot.go.info <- PlotGoInfo(prot.Go.Info)

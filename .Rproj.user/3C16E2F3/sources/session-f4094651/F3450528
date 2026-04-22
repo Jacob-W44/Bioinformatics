@@ -3,7 +3,7 @@
     "path": "C:/Users/jacob/Downloads/BioinformaticsClass/Bioinformatics/Midterm2_TakeHome/Midterm.2.Script.R",
     "project_path": "Midterm2_TakeHome/Midterm.2.Script.R",
     "type": "r_source",
-    "hash": "1146211277",
+    "hash": "0",
     "contents": "",
     "dirty": false,
     "created": 1775683499507.0,
@@ -12,8 +12,8 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "41,0",
-        "scrollLine": "21",
+        "cursorPosition": "36,66",
+        "scrollLine": "19",
         "ignored_words": "amino,fasta\n"
     },
     "folds": "",

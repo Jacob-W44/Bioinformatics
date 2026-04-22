@@ -1,0 +1,57 @@
+setwd("C:/Users/jacob/Downloads/BioinformaticsClass/Bioinformatics/Bioinformatics_Presentation")
+
+library(GenomicAlignments)
+library(UniprotR)
+library(protti)
+library(r3dmol)
+library(Biostrings)
+library(pwalign)
+library(seqinr)
+library(msa)
+library(rentrez)
+library(ape)
+library(phangorn)
+
+AminoAcid <- readAAStringSet(c("RNA.Pol.A.E.coli.fasta", "RNA.Pol.I.fasta", "RNA.Pol.II.fasta", "RNA.Pol.III.fasta"))
+
+# Local PW alignment to determine any similarities in AA production
+pwalign.1 <- pairwiseAlignment(AminoAcid [[1]], AminoAcid [[2]], type = "local")
+pwalign.2 <- pairwiseAlignment(AminoAcid [[1]], AminoAcid [[3]], type = "local")
+pwalign.3 <- pairwiseAlignment(AminoAcid [[1]], AminoAcid [[4]], type = "local")
+
+Biostrings::writeXStringSet(AminoAcid, filepath = "RNA.Pol.AA", format = "FASTA")
+
+# Obtaining Data from UniProt
+Uniprot.RNA.Pol.A <- fetch_uniprot("P0A7Z6")
+Uniprot.RNA.Pol.I <- fetch_uniprot("O95602")
+Uniprot.RNA.Pol.II <- fetch_uniprot("P24928")
+Uniprot.RNA.Pol.III <- fetch_uniprot("O14802")
+
+# Gathering the Gene Ontology Information
+Prot.GO.Info.EC <- GetProteinGOInfo("P0A7Z6")
+Prot.GO.Info.RNA.I <- GetProteinGOInfo("O95602")
+Prot.GO.Info.RNA.II <- GetProteinGOInfo("P24928")
+Prot.GO.Info.RNA.III <- GetProteinGOInfo("O14802")
+
+# Plotting the GO Information
+Plot.GO.Info.EC <- PlotGoInfo(Prot.GO.Info.EC)
+Plot.Go.Info.RNA.I <- PlotGoInfo(Prot.GO.Info.RNA.I)
+Plot.GO.Info.RNA.II <- PlotGoInfo(Prot.GO.Info.RNA.II)
+Plot.GO.Info.RNA.III <- PlotGoInfo(Prot.GO.Info.RNA.III)
+
+# Gather AlphaFold Predictions
+AlphaFold.EC <- fetch_alphafold_prediction("P0A7Z6")
+AlphaFold.RNA.I <- fetch_alphafold_prediction("O95602")
+AlphaFold.RNA.II <- fetch_alphafold_prediction("P24928")
+AlphaFold.RNA.III <- fetch_alphafold_prediction("O14802")
+
+# Create Phylogeny Tree
+Phy.Tree.Addition <- readAAStringSet(c("RNA.Pol.II.Dros.fasta", "RNA.Pol.I.Rat.fasta", "RNA.Pol.III.Rhip.fasta", "Staph.aureus.RNA.Pol.fasta"))
+combined <- c(AminoAcid, Phy.Tree.Addition)
+alignment.RNA <- msa(combined, method = "ClustalW")
+aln <- as.phyDat(alignment.RNA)
+distance.matrix <- dist.ml(aln)
+
+treeNJ <- plot(nj(distance.matrix))
+
+
